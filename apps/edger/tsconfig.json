@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "files": [],
   "include": [],
+  "types": ["bun"],
   "references": [
     {
       "path": "./tsconfig.app.json"

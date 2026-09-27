@@ -5,12 +5,13 @@
   "nx": {
     "targets": {
       "build": {
-        "executor": "@nx/esbuild:esbuild",
+        "executor": "nx:run-commands",
         "outputs": [
           "{options.outputPath}"
         ],
         "defaultConfiguration": "production",
         "options": {
+          "command": "bun build apps/edger/src/main.ts --outdir=dist/apps/edger --target=bun",
           "platform": "node",
           "outputPath": "apps/edger/dist",
           "format": [
@@ -89,12 +90,13 @@
       },
       "serve": {
         "continuous": true,
-        "executor": "@nx/js:node",
+        "executor": "nx:run-commands",
         "defaultConfiguration": "development",
         "dependsOn": [
           "build"
         ],
         "options": {
+          "command": "bun run --watch apps/edger/src/main.ts",
           "buildTarget": "@offgrid-ops-monorepo/edger:build",
           "runBuildTargetDependencies": false
         },
@@ -109,5 +111,7 @@
       }
     }
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@types/bun": "^1.4.2"
+  }
 }
