@@ -5,6 +5,7 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
+    "@nx/expo": "^23.2.1",
     "@nx/js": "23.2.1",
     "@nx/node": "^23.2.1",
     "@nx/react": "^23.2.1",
