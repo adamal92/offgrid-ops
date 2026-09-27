@@ -2,7 +2,9 @@
   "extends": "../../tsconfig.base.json",
   "files": [],
   "include": [],
-  "types": ["bun"],
+  "compilerOptions": {
+    "types": ["bun"],
+  },
   "references": [
     {
       "path": "./tsconfig.app.json"

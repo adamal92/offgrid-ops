@@ -4,7 +4,8 @@
     "outDir": "out-tsc/@offgrid-ops-monorepo/edger-e2e",
     "esModuleInterop": true,
     "noUnusedLocals": false,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "types": ["node", "bun", "jest"]
   },
   "include": ["jest.config.ts", "src/**/*.ts"],
   "references": []
