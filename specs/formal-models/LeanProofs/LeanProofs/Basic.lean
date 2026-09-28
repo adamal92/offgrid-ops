@@ -1,7 +1,16 @@
+/-
+Copyright (c) 2026 Adam Livne. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Adam Livne
+-/
+
 import Mathlib
+
 -- import tactic
 
 -- def hello := "world"
+
+/-! ...jjjjjjjjjjjjjjjjjj -/
 
 example {m n : ℤ} (h1 : m + 3 ≤ 2 * n - 1) (h2 : n ≤ 5) : m ≤ 6 := by
   have h3 :=
