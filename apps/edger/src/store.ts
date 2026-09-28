@@ -4,7 +4,7 @@ import { Effect, Console } from "effect";
 import { createActor } from "xstate";
 import deviceMachine from "./deviceMachine.js"; // XState FSM
  
-const fetchAICompletion = async (mock: string): Promise<object> => ({});
+export const fetchAICompletion = async (mock: string): Promise<object> => ({});
 
 // Effector events
 export const deviceEvent = createEvent<unknown>();
@@ -29,3 +29,6 @@ actor.subscribe((snapshot) => {
 });
 
 actor.start();
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
+export const setAppState = (str: string): void => {};

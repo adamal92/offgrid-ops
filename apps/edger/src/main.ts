@@ -10,3 +10,22 @@ const server = Bun.serve({
 });
 
 console.log(`🚀 Bun server running at http://localhost:${server.port}`);
+
+const messageWorker = () => {
+  return new Promise((resolve) => {
+    // Instantiate Bun worker natively
+    const worker = new Worker(new URL('./workers/rand.worker.ts', import.meta.url).href);
+
+    worker.postMessage({ points: [] });
+
+    worker.onmessage = (event) => {
+      worker.terminate(); // Free worker thread
+      resolve("");
+    };
+
+    worker.onerror = (error) => {
+      worker.terminate();
+      resolve({ error: error.message });
+    };
+  });
+};

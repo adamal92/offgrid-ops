@@ -6,7 +6,8 @@
     "types": ["bun"],
     "declaration": true,
     "emitDeclarationOnly": false,
-    "strict": true
+    "strict": true,
+    // "lib": ["ES2022", "WebWorker"],
   },
   "references": [
     {
