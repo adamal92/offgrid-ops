@@ -1,0 +1,28 @@
+{
+  "name": "@offgrid-ops-monorepo/edger-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "implicitDependencies": ["@offgrid-ops-monorepo/edger"],
+  "targets": {
+    "e2e": {
+      "outputs": [
+        "{projectRoot}/test-output/jest/coverage",
+        "{workspaceRoot}\\coverage\\apps\\edger-e2e"
+      ],
+      "dependsOn": [
+        "@offgrid-ops-monorepo/edger:build",
+        "@offgrid-ops-monorepo/edger:serve-dist"
+      ],
+      "options": {
+        "passWithNoTests": true
+      }
+    },
+    "bun-e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "bun test apps/edger-e2e/src"
+      }
+    }
+  },
+  "sourceRoot": "apps/edger-e2e/src",
+  "projectType": "application"
+}

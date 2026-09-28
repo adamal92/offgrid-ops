@@ -4,6 +4,8 @@
   "include": [],
   "compilerOptions": {
     "types": ["bun"],
+    "declaration": true,
+    "emitDeclarationOnly": false
   },
   "references": [
     {

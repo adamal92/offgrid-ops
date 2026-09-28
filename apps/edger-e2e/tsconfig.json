@@ -5,8 +5,16 @@
     "esModuleInterop": true,
     "noUnusedLocals": false,
     "noImplicitAny": false,
-    "types": ["node", "bun", "jest"]
+    "types": ["node", "bun", "jest"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "es2022",
+    "allowSyntheticDefaultImports": true
   },
   "include": ["jest.config.ts", "src/**/*.ts"],
-  "references": []
+  "references": [
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
 }
