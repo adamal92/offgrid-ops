@@ -46,3 +46,6 @@ Thumbs.db
 
 vitest.config.*.timestamp*
 test-output
+
+# Lean 4 / Lake
+specs/formal-models/Lean/.lake/

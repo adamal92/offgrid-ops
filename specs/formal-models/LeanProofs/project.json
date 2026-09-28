@@ -1,0 +1,27 @@
+{
+  "name": "@offgrid-ops-monorepo/formal-models/Lean",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "lake build",
+        "cwd": "specs/formal-models"
+      }
+    },
+    "check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "lake check",
+        "cwd": "specs/formal-models"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "lake clean",
+        "cwd": "specs/formal-models"
+      }
+    }
+  }
+}
