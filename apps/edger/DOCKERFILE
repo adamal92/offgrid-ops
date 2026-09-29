@@ -1,0 +1,21 @@
+# Use the official Bun image
+FROM oven/bun:latest
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy package manifests first (for caching layer)
+COPY package.json pnpm-lock.yaml* ./
+
+# Install dependencies
+# RUN bun install
+RUN pnpm install --frozen-lockfile
+
+# Copy the rest of your application code
+COPY . .
+
+# Expose the port your Bun server listens on
+EXPOSE 3000
+
+# Start the Bun server
+CMD ["bun", "run", "server.ts"]

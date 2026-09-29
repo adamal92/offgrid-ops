@@ -1,0 +1,17 @@
+{
+  "material-icon-theme.folders.associations": {
+    "firmware": "assembly",
+    "rust-edge": "rust",
+    "edger": "typescript",
+    "edger-e2e": "test",
+    "LeanProofs": "docs",
+    "specs": "markdown",
+    "formal-models": "Rules",
+    "workers": "trigger",
+    "out-tsc": "dist"
+  },
+  "material-icon-theme.files.associations": {
+    "*bun*": "bun",
+    "*bun.ts": "bun",
+  }
+}

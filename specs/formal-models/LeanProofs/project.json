@@ -1,6 +1,8 @@
 {
   "name": "@offgrid-ops-monorepo/formal-models/Lean",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "tags": ["runtime:none", "scope:specs"],
   "targets": {
     "build": {
       "executor": "nx:run-commands",

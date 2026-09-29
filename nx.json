@@ -85,5 +85,24 @@
         }
       ]
     }
+  },
+  "pluginsConfig": {
+    "@nx/js": {
+      "lint": {
+        "rules": {
+          "nx/enforce-module-boundaries": [
+            "error",
+            {
+              "enforceBuildableLibDependency": true,
+              "allow": [],
+              "depConstraints": [
+                { "sourceTag": "scope:server", "onlyDependOnLibsWithTags": ["scope:shared"] },
+                { "sourceTag": "scope:client", "onlyDependOnLibsWithTags": ["scope:shared", "scope:ui"] }
+              ]
+            }
+          ]
+        }
+      }
+    }
   }
 }

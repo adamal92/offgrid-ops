@@ -1,9 +1,14 @@
 packages:
   - 'packages/*'
   - 'apps/*'
+  - 'types/*'
+  - 'specs/formal-models/LeanProofs/*'
 autoInstallPeers: true
 allowBuilds:
   '@parcel/watcher': true
+  '@tensorflow/tfjs-node': true
+  core-js: true
   esbuild: true
   nx: true
   unrs-resolver: true
+  workerd: true

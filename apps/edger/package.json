@@ -3,6 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
+  "projectType": "application",
+  "tags": [
+    "runtime:edge",
+    "scope:server"
+  ],
   "nx": {
     "targets": {
       "build": {
@@ -172,14 +177,22 @@
     }
   },
   "devDependencies": {
-    "@types/bun": "^1.4.2"
+    "@types/bun": "^1.4.2",
+    "prisma": "8.0.0-rc.17"
   },
   "dependencies": {
     "@hono/trpc-server": "^0.4.2",
+    "@prisma/client": "^7.10.0",
+    "@tensorflow/tfjs": "^4.22.0",
     "@trpc/server": "^11.19.0",
+    "danfojs": "1.1.2",
+    "drizzle-kit": "^0.31.11",
+    "drizzle-orm": "^0.45.3",
     "effect": "^3.22.2",
     "effector": "^23.4.4",
     "hono": "^4.13.9",
+    "pg": "^8.23.0",
+    "xlsx": "^0.18.5",
     "xstate": "^5.33.2",
     "zod": "^4.6.5"
   }

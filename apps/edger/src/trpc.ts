@@ -4,7 +4,7 @@ import { initTRPC } from "@trpc/server";
 import { z } from "zod";
 import { trpcServer } from "@hono/trpc-server";
 // Effector store
-import { appState, fetchAICompletion, setAppState } from "./store.js";
+import { appState, fetchAICompletion, setAppState } from "./store.bun.js";
 import { Effect } from "effect";
 
 // Initialize tRPC

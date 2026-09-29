@@ -2,6 +2,7 @@
   "name": "@offgrid-ops-monorepo/edger-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "implicitDependencies": ["@offgrid-ops-monorepo/edger"],
+  "tags": ["test:e2e", "scope:server"],
   "targets": {
     "e2e": {
       "outputs": [
