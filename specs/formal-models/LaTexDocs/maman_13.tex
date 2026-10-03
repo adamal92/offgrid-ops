@@ -1,0 +1,767 @@
+% init
+\documentclass{article}
+
+% imports
+% \usepackage{amsmath}
+% \usepackage{fontspec}
+% % \usepackage[english,hebrew]{babel}
+% \usepackage{polyglossia}
+% % math N
+% \usepackage{amsfonts} 
+% % amssymb
+% % txfonts
+% % pxfonts
+% \usepackage{amsthm}
+% \usepackage{amssymb}
+% \usepackage{graphicx} % Required for inserting images
+
+% language fonts
+\setdefaultlanguage[numerals=hebrew]{hebrew}
+\setmainlanguage{hebrew}
+% \setmainfont{Times New Roman}
+\setotherlanguage{english}
+\newfontfamily\englishfont[Script=English]{Times New Roman}
+\newfontfamily\hebrewfont[Script=Hebrew]{Arial}
+% \newfontfamily{\hebrewfont}[Script=Hebrew]{Miriam Mono CLM}
+% \newfontfamily{\hebrewfont}[Script=Hebrew]{Miriam CLM}
+% \newfontfamily{\hebrewfont}[Script=Hebrew]{David CLM}
+% \newfontfamily{\hebrewfont}[Script=Hebrew]{HarSinai}
+% \newfontfamily{\hebrewfont}[Script=Hebrew]{Lilach}
+% \newfontfamily{\hebrewfont}[Script=Hebrew]{Stam Ashkenaz CLM}
+
+\title{ממ"ן \LR{13}}
+
+\author{
+    209621325 
+    \RL{
+        אדם ליבנה
+    }
+}
+
+\begin{document}
+
+% set page numbering
+\renewcommand{\thepage}{\fontspec{Times New Roman}\LR{\Roman{page}}}
+\setcounter{page}{1}
+
+
+% \date{\vspace{-5ex}} % Toggle commenting to test
+\date{\LR{01/09/2024}}
+
+\renewcommand\qedsymbol{
+    \begin{center}
+        \emph{\textbf{\textit{{\fontspec{Stam Ashkenaz CLM}מ.ש.ל}}}}
+    \end{center}
+}
+
+\newtheorem*{theorem}{הוכחה}
+\newtheorem*{remark}{נתון}
+\newtheorem*{letyehi}{יהי}
+\newtheorem*{define}{הגדרה}
+\newtheorem*{sen}{משפט}
+\newtheorem*{ass}{נניח}
+\newtheorem{lem}{למה}
+\newtheorem{ex}{דוגמא}
+\newtheorem*{nega}{בשלילה}
+% \newtheorem*{ntp}{
+%     \emph{\textbf{\textit{{\fontspec{Stam Ashkenaz CLM}צ"ל:}}}}
+% }
+\newenvironment{ntp}{
+    \emph{\textbf{\textit{{\fontspec{Stam Ashkenaz CLM}צ"ל:}}}}
+}
+
+% start of page content
+\maketitle
+\section*{שאלה 1}
+
+\subsection*{א}
+
+\begin{letyehi}
+$A = \{ 1, 2 \}$ קבוצה.
+\end{letyehi}
+\begin{ntp}
+את כל הפונקציות
+$ A \rightarrow \Bbb{N} $
+שאינן חד חד ערכיות (להלן: חח"ע)
+\end{ntp}
+
+\begin{define}
+    $ f: A \rightarrow B := (A, B, F ) \; | \; F \subseteq A \times B $
+\end{define}
+
+\newline
+
+ניקח לדוגמא את כל הפונקציות
+$ F : A \rightarrow M \subseteq \Bbb{N} $
+שמקיימות:
+
+\begin{letyehi}
+    $ F = \{ (1, m), (2, m) \} \; | \; m \in M \subseteq \Bbb{N} $
+\end{letyehi}
+
+אלו הן הפונקציות שאינן חח"ע.
+
+\subsection*{ב}
+
+ניקח לדוגמא את כל הפונקציות
+$ F : \Bbb{N} \rightarrow A $
+שמקיימות:
+
+\begin{letyehi}
+    $ F = \{ (n, 1) \} \; | \; n \in \Bbb{N} $
+\end{letyehi}
+\begin{letyehi}
+    $ F = \{ (n, 2) \} \; | \; n \in \Bbb{N} $
+\end{letyehi}
+
+אלו הן הפונקציות שאינן על.
+
+\newpage
+
+\subsection*{ג}
+
+\begin{letyehi}
+    $ f : A \rightarrow \Bbb{N} $
+\end{letyehi}
+
+\begin{letyehi}
+    $ g : \Bbb{N} \rightarrow A $
+\end{letyehi}
+
+\subsubsection*{a.}
+
+\begin{ntp}
+    $ \exists (g \circ f)^{-1} $
+\end{ntp}
+
+\begin{define}
+    $ g \circ f = g(f(x)) $
+\end{define}
+
+\begin{proof}
+    \begin{sen}
+        $ \iff Dom(f) \subseteq Dom(g) \land Img(g) \subseteq Img(f) $
+        הפיכה $ f \circ g $
+    \end{sen}
+    \[\Downarrow\]
+    $ \iff Dom(g) \subseteq Dom(f) \land Img(f) \subseteq Img(g) $
+    הפיכה $ g \circ f $
+    \[
+        g \circ f: \Bbb{N} \rightarrow \Bbb{N}
+    \]
+    \[
+        \Bbb{N} \not \subseteq A
+    \]
+    \[\Downarrow\]
+    המקור של $g$
+    אינו מוכל במקור של $f$,
+    וגם התמונה של $f$
+    אינה מוכלת בתמונה של $g$
+    ולכן ההרכבה $f$
+    היא אינה הפיכה.
+    \[\Downarrow\]
+    \[
+        \lnot \exists (g \circ f)^{-1}
+    \]    
+\end{proof}
+
+\newpage
+
+\subsubsection*{b.}
+
+\begin{ntp}
+    $ \exists (f \circ g)^{-1} $
+\end{ntp}
+
+
+\begin{proof}
+    \begin{sen}
+        $ \iff Dom(f) \subseteq Dom(g) \land Img(g) \subseteq Img(f) $
+        הפיכה $ f \circ g $
+    \end{sen}
+    \[
+        f \circ g: A \rightarrow A
+    \]
+    \[
+        A \subseteq \Bbb{N}
+    \]
+    \[\Downarrow\]
+    המקור של $f$
+    מוכל במקור של $g$,
+    וגם התמונה של $g$
+    מוכלת בתמונה של $f$
+    ולכן ההרכבה $ f \circ g $
+    היא פונקציה הפיכה.
+    \[\Downarrow\]
+    \[
+        \exists (f \circ g)^{-1}
+    \]    
+\end{proof}
+
+\newpage
+
+\section*{שאלה 2}
+
+\subsection*{א}
+
+\begin{letyehi}
+    $ f: A \rightarrow B , C \subseteq B $
+\end{letyehi}
+
+\begin{ntp}
+    $ f(f^{-1}(C)) \subseteq C $
+\end{ntp}
+
+\begin{proof}
+    \begin{define}
+        $ A \subseteq B := \{ x \: | \: x \in A \Rightarrow x \in B : \forall x \} $
+    \end{define}
+    \begin{define}
+        $ f^{-1}(C) := \{ x \: | \: f(x) \in C : x \in A \} $
+    \end{define}
+    \begin{letyehi}
+            \[
+                y \in f(f^{-1}(C))
+            \]
+    \end{letyehi}
+    \[
+        \exists x \in f^{-1}(C) : f(x) = y
+    \]
+    \[
+        f(x) \in C
+    \]
+    \[ \Downarrow \]
+    \[
+        \boxed{y \in C}
+    \]
+    \[ \Downarrow \]
+    \[
+        y \in f(f^{-1}(C)) \Rightarrow y \in C \hspace{0.5cm} \square
+    \]
+    \[ \Downarrow \]
+    \[
+        f(f^{-1}(C)) \subseteq C
+    \]
+\end{proof}
+
+\subsection*{ב}
+
+\begin{define}
+    $ A \subset B := A \subseteq B \land A \not = B = \{ x | x \in A \Rightarrow x \in B \land A \not = B \} $
+\end{define}
+
+ניקח לדוגמא את הפונקציה המוגדרת בצורה הבאה:
+
+\begin{ex}
+    \begin{letyehi}
+        $ A = \{ 1, 2 \} $
+    \end{letyehi}
+    
+    \begin{letyehi}
+        $ B = \{ 1, 2, 3, 4 \} $
+    \end{letyehi}
+    
+    \begin{letyehi}
+        $ C = \{ 1, 2, 3 \} $
+    \end{letyehi}
+    קבוצות.
+
+    \begin{letyehi}
+        $ f = (A, B, \{ (a, 1), (b, 2) \}) $
+    \end{letyehi}
+   
+    \begin{letyehi}
+        $ f^{-1} = (B, A, \{ (1, a), (2, b), (3, a), (4, b) \}) $
+    \end{letyehi}
+    הפונקציה ההופכית ל $f$.
+
+    \[ \Downarrow \]
+
+    \[
+        f(f^{-1}(C)) = (C, \{ 1, 2 \}, \{ (1, 1), (2, 2), (3, 3) \})
+    \]
+
+    \[
+        \{ 1, 2 \} \subset (\{ 1, 2, 3 \} = C)
+    \]
+
+    \[ \Downarrow \]
+
+    מצאנו דוגמא למצב שבו:
+    \[
+        f(f^{-1}(C)) \subset C
+    \]
+\end{ex}
+
+\newpage
+
+\subsection*{ג}
+
+\begin{ntp}
+    $ \rightarrow f(f^{-1}(C)) = C $
+    על $f$
+\end{ntp}
+
+\begin{proof}
+    \begin{define}
+        $ := \{ f(a) = b \; | \; \exists a \in A : \forall b \in B \} $
+        על $f$
+    \end{define}
+    
+    \[ \Downarrow \]
+    
+    \[
+        f(a) = c \; | \; \exists a \in A : \forall c \in C
+    \]
+    
+    \[ \Downarrow \]
+    
+    \[
+        f(f^{-1}(C)) : A \rightarrow (B \supseteq C)
+    \]
+    
+    \[ \Downarrow \]
+    
+    \begin{lem}
+        \[
+            \boxed{f(f^{-1}(C)) \supseteq C}
+        \]
+    \end{lem}
+    
+    \begin{lem}
+        $ f(f^{-1}(C)) \subseteq C $    הוכח בסעיף א'
+    \end{lem}
+    
+    \[ \Downarrow \]
+
+    \[
+        f(f^{-1}(C)) = C \hspace{1cm} \square
+    \]
+\end{proof}
+
+\newpage
+
+\section*{שאלה 3}
+
+\subsection*{א}
+
+\begin{letyehi}
+    $ f, g : \Bbb{N} \rightarrow \Bbb{N} $
+\end{letyehi}
+
+\begin{remark}
+    על $g$
+\end{remark}
+
+\begin{remark}
+    $(f \circ g)(n) = 2n - 1 \; | \; \forall n \in \Bbb{N} $
+\end{remark}
+
+\begin{ntp}
+    $f$ אינה על
+\end{ntp}
+
+\begin{define}
+    $\iff f(a) = b \; | \; \exists a \in A : \forall b \in B $
+    $f$ חח"ע
+\end{define}
+כדי להוכיח שהפונקציה היא אינה על ניתן דוגמא נגדית שמראה כי קיים ערך שעבורו הפונקציה היא אינה על:
+
+\begin{proof}
+    \begin{ex}
+        \begin{ass}
+            $ fx = 2x - 1 $
+        \end{ass}
+        \begin{ass}
+            $ gx = x $
+        \end{ass}
+    \end{ex}
+    \[
+        (f \circ g) (n) = 2n-1
+    \]
+    \[
+        fx = 2
+    \]
+    \[
+        2x - 1 = 2
+    \]
+    \[
+        2x = 3
+    \]
+    \[
+        x = \frac{3}{2}
+    \]
+    \[\Downarrow\]
+    \[
+        fx = 2 \Rightarrow x \not \in \Bbb{N}
+    \]
+    \[\Downarrow\]
+    \[
+        \boxed{fx \not = 2 | x \in \Bbb{N}}
+    \]
+
+מצאנו דוגמא שלפיה הפונקציה היא אינה על. \square
+
+\end{proof}
+
+\newpage
+
+\subsection*{3 ב}
+
+\begin{ntp}
+    הפונקציה $f$ היא חח"ע
+\end{ntp}
+
+\begin{define}
+    $ \iff f(x) \not = f(y) \iff x \not = y \; | \; \forall x, y \in A $
+    $f$ חח"ע
+\end{define}
+
+\begin{sen}
+    $ \iff f(x) = f(y) \iff x = y \; | \; \forall x, y \in A $
+    $f$ חח"ע
+\end{sen}
+
+\begin{define}
+    $ := \{ f(a) = b \; | \; \exists a \in A : \forall b \in B \} $
+    על $f$
+\end{define}
+
+\begin{proof}
+\begin{remark}
+    $g$ על
+\end{remark}
+\[\Downarrow\]
+\[
+    g(a) = b \; | \; \exists a \in \Bbb{N} : \forall b \in \Bbb{N}
+\]
+\[
+    f \circ g = f(g(x)) = 2n - 1
+\]
+\begin{letyehi}
+    \[
+        x, y \in \Bbb{N}
+    \]
+\end{letyehi}
+\[
+    (f \circ g)(x) = (f \circ g)(y)
+\]
+\[\Downarrow\]
+\[
+    2x - 1 = 2y - 1
+\]
+\[
+    2x = 2y
+\]
+\[
+    x = y
+\]
+\[\Downarrow\]
+\begin{lem}
+    \[ (f \circ g)(x) = (f \circ g)(y) \Rightarrow x = y \]
+\end{lem}
+\[\Downarrow\]
+$ f \circ g $ חח"ע
+
+\begin{remark}
+    $g$ על
+\end{remark}
+\[\Downarrow\]
+\[
+    g(x) = y \; | \; \exists x : \forall y \in \Bbb{N} 
+\]
+\begin{ass}
+    בשלילה
+    \[f(g(a)) = f(g(b)) \; | \; a \not = b\]
+\end{ass}
+\[\Downarrow\]
+\[
+    a = b
+\]
+הגענו לסתירה שכן הנחנו כי הם אינם שווים אך לפי למה ג. הם כן ולכן לא קיימים שני איברים שונים עבורם מתקיים השיוויון.
+\[\Downarrow\]
+\[
+    g(a) = g(b)
+\]
+\begin{letyehi}
+    $ g(a) = j $
+\end{letyehi}
+
+\begin{letyehi}
+    $ g(b) = k $
+\end{letyehi}
+
+\[\Downarrow\]
+
+\[
+    f(j) = f(k) \Rightarrow j = k
+\]
+\[\Downarrow\]
+$f$ חח"ע לפי ההגדרה
+\end{proof}
+
+\newpage
+
+\subsection*{ג}
+
+ניתן דוגמא לפונקציות $f, g$
+אשר מקיימות את התנאים כפי שהוצגו בסעיפים הקודמים:
+
+\begin{ex}
+    $ f(x) = 2x - 1 $
+\end{ex}
+אשר הוכח בסעיף א' כי היא אינה על
+
+\begin{ex}
+    $ g(x) = x $
+\end{ex}
+פונקציה על שכן: $ g(x) = g(y) \Rightarrow x = y $
+
+\square
+
+\newpage
+
+
+\section*{שאלה 4}
+
+\subsection*{א}
+
+\begin{letyehi}
+    $ f, g : A \rightarrow A $
+\end{letyehi}
+
+\subsubsection*{a}
+
+\begin{ntp}
+    אם $f$ אינה על אז $ f \circ g $ גם היא אינה על
+\end{ntp}
+
+\begin{define}
+    $ := \{ f(a) = b \; | \; \exists a \in A : \forall b \in B \} $
+    על $f$
+\end{define}
+
+\begin{proof}
+    \begin{remark}
+        $ \Rightarrow \exists b \in A : f(a) \not = b \; | \; \forall a \in A $
+        $f$ אינה על
+    \end{remark}
+
+    $ \iff (f \circ g)(a) = b \; | \; \exists a \forall b : a, b \in A $
+    $ f \circ g $ על
+
+\begin{letyehi}
+    $ g(a) = j $
+\end{letyehi}
+
+\[\Downarrow\]
+
+\[
+    f \circ g _{onto} \iff f(j) = b \; | \; \exists a \forall b : a, b \in A
+\] על
+\[
+    \exists b : f(a) \not = b \; | \; \forall a \in A
+\]
+\[\Downarrow\]
+\[
+    \exists b : f(j) \not = b \; | \; \forall a \in A
+\]
+\[\Downarrow\]
+\[
+    \exists b : f(g(a)) \not = b \; | \; \forall a \in A
+\]
+\[\Downarrow\]
+\[
+    \boxed{\lnot \exists b : f(g(a)) = b \; | \; \forall b \in A}
+\]
+\[\Downarrow\]
+$ f \circ g $ אינה על
+\square
+
+\end{proof}
+
+\newpage
+
+\subsubsection*{b}
+
+\begin{ntp}
+    אם $g$ אינה על וגם $f$ 
+    חח"ע
+    אז ההרכבה $ f \circ g $
+    אינה על
+\end{ntp}
+
+\begin{define}
+    $ \iff f(x) \not = f(y) \iff x \not = y | \forall x, y \in A $
+    $f$ חח"ע
+\end{define}
+
+\begin{sen}
+    $ \iff f(x) = f(y) \iff x = y | \forall x, y \in A $
+    $f$ חח"ע
+\end{sen}
+
+\begin{define}
+    $ := \{ f(a) = b | \exists a \in A : \forall b \in B \} $
+    על $f$
+\end{define}
+
+\begin{remark}
+    $ \Rightarrow \exists b \in A : g(a) \
+    \not = b | \forall a \in A $
+    $g$ אינה על
+\end{remark}
+
+\begin{proof}
+    
+    % \begin{ass}
+    %     בשלילה
+    %     $ \Rightarrow (f \circ g)(a) = b | \exists a \forall b : a, b \in A $
+    %     $ f \circ g $ על
+    % \end{ass}
+    
+    % \begin{letyehi}
+    %     $ g(a) = j $
+    % \end{letyehi}
+    
+    % \[\Downarrow\]
+    
+    % \[
+    %     f(g(a)) = f(j) = b | \exists a \forall b : a, b \in A
+    % \]
+    
+    % $f$ על
+    % \[\Downarrow\]
+    % \[
+    %     f(n) = f(m) \iff n = m
+    % \]
+    
+    \begin{ex}
+        נגדית
+        \begin{letyehi}
+            $ A = \{ 1, 2 \}, g : A \rightarrow A, f : A \rightarrow A $
+        \end{letyehi}
+        \begin{letyehi}
+            $ g = \{ (1, 2), (2, 2) \} $
+            שאינה על
+        \end{letyehi}
+        \begin{letyehi}
+            $ f = \{ (1, 2), (2, 1) \} $
+            חח"ע
+        \end{letyehi}
+    \end{ex}
+    \[\Downarrow\]
+    \begin{letyehi}
+        $ f \circ g : A \rightarrow A $
+    \end{letyehi}
+    \[
+        \boxed{ f \circ g = \{ (1, 1), (2,1) \} }
+    \]
+    מצאנו דוגמא לפונקציה שעבורה ההרכבה $ f \circ g $
+    היא איננה על, מה שאומר שקיים איבר שעבורו ההרכבה אינה על.
+    \[\Downarrow\]
+    ההרכבה $ f \circ g $ אינה על
+    לפי הדוגמא.
+    \square
+
+\end{proof}
+
+\newpage
+
+\subsection*{ב}
+
+\begin{letyehi}
+    $ f, g : \Bbb{N} \rightarrow \Bbb{N} $
+\end{letyehi}
+
+\begin{remark}
+    $ g(n) := 2n - 1 \; | \; \forall n \in \Bbb{N} $
+\end{remark}
+
+\begin{remark}
+    \begin{align*}
+        f(n) :=
+        \begin{cases}
+            \frac{n+1}{2} \\
+            \; \; 1
+        \end{cases}
+        \Bigg | \; \forall n \in \mathbb{N}
+    \end{align*}
+\end{remark}
+
+\begin{define}
+    $ := \{ f(a) = b \: | \: \exists a \in A : \forall b \in B \} $
+    על $f$
+\end{define}
+
+\begin{proof}
+    
+    \begin{ass}
+        בשלילה
+        $ \Rightarrow g(a) = b \: | \: \exists a \forall b : a, b \in A $
+        $g$ על
+    \end{ass}
+    
+    \[\Downarrow\]
+    
+    \[
+        g(n) = b \; | \; \exists n \forall b : n, b \in \Bbb{N}
+    \]
+    \[
+        2n - 1 = b
+    \]
+    \[
+        n = \frac{b+1}{2}
+    \]
+    
+    \begin{ex}
+        נגדית
+        $ b=2 $
+    \end{ex}
+    
+    \[\Downarrow\]
+    
+    \[
+        \boxed{ n = \frac{2+1}{2} = \frac{3}{2} \not \in \Bbb{N} }
+    \]
+    \[\Downarrow\]
+    \[
+        \exists b : g(n) \not = b \; | \; \forall n \in \Bbb{N} : b \in \Bbb{N}
+    \]
+    \[\Downarrow\]
+    $ g $ אינה על \square
+
+    \begin{align*}
+        f \circ g = f(g(n)) = 
+        \begin{cases}
+            \frac{(2n - 1) + 1}{2} = \frac{2n}{2} \\
+            \; \; 1
+        \end{cases}
+        =
+        \begin{cases}
+            n \\
+            1
+        \end{cases}
+    \end{align*}
+    \[
+        g(n) = 2n - 1
+    \]
+    \[\Downarrow\]
+    \[
+        g(n) : \Bbb{N} \rightarrow odd
+    \]
+    \[\Downarrow\]
+    \[
+        g(n) \in odd
+    \]
+    \[\Downarrow\]
+    \[
+        \boxed{ f(g(n)) = n } \; | \; \forall n \in \Bbb{N} : \exists n
+    \]
+    \[\Downarrow\]
+    $f \circ g$ על. \square
+
+\end{proof}
+
+
+\end{document}
