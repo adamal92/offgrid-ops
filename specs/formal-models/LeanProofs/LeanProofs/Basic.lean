@@ -308,3 +308,4 @@ variable (n : ℕ)
 #eval ()
 
 #eval exampleTriangleGraph.edges.powerset.card
+
