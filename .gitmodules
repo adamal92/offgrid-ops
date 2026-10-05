@@ -1,0 +1,3 @@
+[submodule "specs/obsidian/World-Model-Vault"]
+	path = specs/obsidian/World-Model-Vault
+	url = https://github.com/adamal92/World-Model-Vault.git
