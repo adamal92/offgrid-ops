@@ -186,6 +186,7 @@
     "@huggingface/transformers": "^4.3.0",
     "@prisma/client": "^7.10.0",
     "@tensorflow/tfjs": "^4.22.0",
+    "@trpc/client": "^11.19.0",
     "@trpc/server": "^11.19.0",
     "danfojs": "1.1.2",
     "drizzle-kit": "^0.31.11",
