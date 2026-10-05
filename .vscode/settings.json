@@ -8,7 +8,8 @@
     "specs": "markdown",
     "formal-models": "Rules",
     "workers": "trigger",
-    "out-tsc": "dist"
+    "out-tsc": "dist",
+    "SQLite": "database"
   },
   "material-icon-theme.files.associations": {
     "*bun*": "bun",
